@@ -16,6 +16,8 @@ module.exports = {
             description,
             hashtags
         } = req.body;
+
+        
         const {
             filename: image
         } = req.file;
