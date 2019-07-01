@@ -21,7 +21,7 @@ export class Feed extends Component {
     }
 
     registerToSocket = () => {
-        const socket = io('http://localhost:5000');
+        const socket = io('https://insta-api-back.herokuapp.com');
 
         socket.on('post', newPost => {
             this.setState({ feed: [newPost, ...this.state.feed] });
@@ -52,7 +52,7 @@ export class Feed extends Component {
                             </div>
                             <More />
                         </header>
-                        <img src={`http://localhost:5000/files/${post.image}`} alt="post" />
+                        <img src={`https://insta-api-back.herokuapp.com/files/${post.image}`} alt="post" />
                         <footer>
                             <div className="actions">
                                 <button type="button" onClick={() => { this.handleLike(post._id) }} >
